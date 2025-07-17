@@ -5,7 +5,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap Default Constructor called" << std::endl;
+	std::cout << RED << "[ClapTrap] " << RESET << "Default Constructor called" << std::endl;
 	this->_name = "";
 	this->_hitPoints = 10;
 	this->_energyPoints = 10;
@@ -115,7 +115,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	else
 	{
 		this->_hitPoints -= amount;
-		std::cout << "ClapTrap " << this->_name
+		std::cout << RED << "[ClapTrap] " << RESET << this->_name
 				  << " has " << this->_hitPoints
 				  << " hit points left!" << std::endl;
 	}
