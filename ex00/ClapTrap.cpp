@@ -115,7 +115,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	else
 	{
 		this->_hitPoints -= amount;
-		std::cout << "ClapTrap " << this->_name
+		std::cout << RED << "ClapTrap " << RESET << << this->_name
 				  << " has " << this->_hitPoints
 				  << " hit points left!" << std::endl;
 	}
