@@ -16,6 +16,7 @@ public:
 	void guardGate();
 
 private:
+	bool guardMode;
 };
 
 #endif

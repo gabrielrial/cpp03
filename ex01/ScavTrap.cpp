@@ -9,6 +9,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
+	guardMode = false;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -45,5 +46,15 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate(void)
 {
-	std::cout << GREEN << "[ScavTrap] " << RESET << this->_name << " is now guarding the gate." << std::endl;
+	if (guardMode == false)
+	{
+		guardMode = true;
+		std::cout << GREEN << "[ScavTrap] " << RESET << this->_name << " is now guarding the gate." << std::endl;
+	}
+	else
+	{
+		guardMode = false;
+		std::cout << GREEN << "[ScavTrap] " << RESET << this->_name << " is no longer guarding the gate." << std::endl;
+	}
+
 }

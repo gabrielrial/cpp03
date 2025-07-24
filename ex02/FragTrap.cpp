@@ -6,7 +6,7 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	std::cout << YELLOW <<"[FragTrap]" << RESET << "Default Constructor called" << std::endl;
+	std::cout << YELLOW <<"[FragTrap] " << RESET << "Default Constructor called" << std::endl;
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
@@ -14,7 +14,7 @@ FragTrap::FragTrap() : ClapTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << YELLOW <<"[FragTrap]" << RESET << name << " Name Constructor called" << std::endl;
+	std::cout << YELLOW <<"[FragTrap] " << RESET << name << "Name Constructor called" << std::endl;
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
@@ -22,13 +22,13 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
 {
-	std::cout << YELLOW <<"[FragTrap]" << RESET << " Copy Constructor called" << std::endl;
-	*this = copy; // reutiliza tu operator=
+	std::cout << YELLOW <<"[FragTrap] " << RESET << "Copy Constructor called" << std::endl;
+	*this = copy;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
 {
-	std::cout << YELLOW <<"[FragTrap]" << RESET << " Copy Assignment Operator called" << std::endl;
+	std::cout << YELLOW <<"[FragTrap] " << RESET << "Copy Assignment Operator called" << std::endl;
 	if (this != &other)
 	{
 		this->_name = other._name;
@@ -41,10 +41,15 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
 
 FragTrap::~FragTrap()
 {
-	std::cout << YELLOW << "[FragTrap] " << RESET << _name << " has been destroyed!" << std::endl;
+	std::cout << YELLOW  << _name <<  RESET << " has been destroyed!" << std::endl;
 }
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << YELLOW <<"[FragTrap] " << RESET << _name << " requests a high five! ✋" << std::endl;
+	std::cout << YELLOW  << _name <<  RESET << " requests a high five! ✋" << std::endl;
+}
+
+void FragTrap::setName(const std::string name)
+{
+	this->_name = name;
 }
